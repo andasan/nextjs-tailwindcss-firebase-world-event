@@ -2,7 +2,7 @@ import Button from '../ui/button';
 import DateIcon from '../icons/date-icon';
 import AddressIcon from '../icons/address-icon';
 import ArrowRightIcon from '../icons/arrow-right-icon';
-import classes from './event-item.module.css';
+import classes from './event-item.style';
 
 function EventItem(props) {
   const { title, image, date, location, id } = props;
@@ -17,24 +17,24 @@ function EventItem(props) {
 
   return (
     <li className={classes.item}>
-      <img src={'/' + image} alt={title} />
+      <img src={'/' + image} alt={title} className={classes.itemImg} />
       <div className={classes.content}>
-        <div className={classes.summary}>
-          <h2>{title}</h2>
-          <div className={classes.date}>
-            <DateIcon />
+        <div>
+          <h2 className={classes.contentH2}>{title}</h2>
+          <div className={classes.iconWrapper}>
+            <DateIcon className={classes.SVG} />
             <time>{humanReadableDate}</time>
           </div>
-          <div className={classes.address}>
-            <AddressIcon />
-            <address>{formattedAddress}</address>
+          <div className={classes.iconWrapper}>
+            <AddressIcon className={classes.SVG} />
+            <address className={classes.address}>{formattedAddress}</address>
           </div>
         </div>
-        <div className={classes.actions}>
+        <div className={classes.action}>
           <Button link={exploreLink}>
-            <span>Explore Event</span>
-            <span className={classes.icon}>
-              <ArrowRightIcon />
+            <span className={classes.actionTitle}>Explore Event</span>
+            <span className={classes.actionIconWrapper}>
+              <ArrowRightIcon className={classes.actionIcon} />
             </span>
           </Button>
         </div>
