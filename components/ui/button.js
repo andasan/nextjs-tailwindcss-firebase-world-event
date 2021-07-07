@@ -1,21 +1,22 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
-import classes from './button.style';
+import classes from './button.style'
 
 function Button(props) {
+  const { link, classProps, onClick, children } = props
   if (props.link) {
     return (
-      <Link href={props.link}>
-        <a className={classes.btn}>{props.children}</a>
+      <Link href={link}>
+        <a className={classProps ? classProps : classes.btn}>{children}</a>
       </Link>
-    );
+    )
   }
 
   return (
-    <button className={classes.btn} onClick={props.onClick}>
-      {props.children}
+    <button className={classProps ? classProps : classes.btn} onClick={onClick}>
+      {children}
     </button>
-  );
+  )
 }
 
-export default Button;
+export default Button
