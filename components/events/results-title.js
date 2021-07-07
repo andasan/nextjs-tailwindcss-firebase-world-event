@@ -10,9 +10,9 @@ function ResultsTitle(props) {
   });
 
   return (
-    <section className={classes.title}>
+    <section className={classes.titleWrapper}>
       <h1>Events in {humanReadableDate}</h1>
-      <Button link='/events'>Show all events</Button>
+      <Button link='/events' classProps={classes.button}>Show all events</Button>
     </section>
   );
 }

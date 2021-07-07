@@ -34,7 +34,7 @@ function FilteredEventsPage(props) {
   }, [data]);
 
   if (!loadedEvents) {
-    return <p className='center'>Loading...</p>;
+    return <p className='w-full flex justify-center'>Loading...</p>;
   }
 
   const filteredYear = filterData[0];
@@ -78,8 +78,8 @@ function FilteredEventsPage(props) {
         <ErrorAlert>
           <p>No events found for the chosen filter!</p>
         </ErrorAlert>
-        <div className='center'>
-          <Button link='/events'>Show All Events</Button>
+        <div className='w-full flex justify-center'>
+          <Button link='/events' classProps={'mx-auto py-4 pl-2 pr-2 bg-yellow-500 border border-solid border-yellow-500 text-yellow-100 rounded hover:bg-yellow-600 hover:border-yellow-600'}>Show All Events</Button>
         </div>
       </Fragment>
     );

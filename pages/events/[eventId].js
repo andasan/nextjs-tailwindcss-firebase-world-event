@@ -11,7 +11,7 @@ function EventDetailPage(props) {
 
   if (!event) {
     return (
-      <div className="center">
+      <div className='w-full flex justify-center'>
         <p>Loading...</p>
       </div>
     );
