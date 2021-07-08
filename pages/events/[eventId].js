@@ -9,9 +9,10 @@ import ErrorAlert from '../../components/ui/error-alert';
 function EventDetailPage(props) {
   const event = props.selectedEvent;
 
+  console.log(new Date());
   if (!event) {
     return (
-      <div className='w-full flex justify-center'>
+      <div className='w-full flex justify-center text-7xl'>
         <p>Loading...</p>
       </div>
     );
@@ -46,6 +47,7 @@ export async function getStaticProps(context) {
   };
 }
 
+//tells nextjs which parameter values it should pre-render this page
 export async function getStaticPaths() {
   const events = await getFeaturedEvents();
 
